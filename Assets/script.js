@@ -14,7 +14,7 @@ const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const spChar = ['#', '$', '^', ')', '@', '%', '+', '/', "'", '?', ':', ',', '!', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 
 // var decalred
-var selection;
+var selection = [];
 
 // start generatePassword function
 function generatePassword() {
@@ -34,10 +34,13 @@ alert("Your password will be " + userNumber + " characters long.");
 
 // i will prompt the user to select character types
 //  and create vars for character arrays
-
+//  added function to return to prompt if no character values are chosen
+ask(); 
+function ask () {
     const yesUpper = confirm("Do you want UPPERCASE characters?");
     if (yesUpper) {
       alert("Your password will contain UPPERCASE characaters");
+      
     }
     if (!yesUpper) {
       alert("Your password will not contain UPPERCASE characaters");
@@ -72,7 +75,11 @@ alert("Your password will be " + userNumber + " characters long.");
 // if all no
     if (!yesLower && !yesUpper && !yesNumber && !yesSpecial) {
       prompt = alert("You must choose at least one character style!");
+      ask();
     }
+
+
+
 // if all yes
     if (yesLower && yesUpper && yesNumber && yesSpecial) {
       selection = spChar.concat(numbers, upperCase, lowerCase);
@@ -124,7 +131,7 @@ alert("Your password will be " + userNumber + " characters long.");
   } else if (yesSpecial) {
       selection = spChar;
   }
-
+}
 // i will pull random selections from the user selected concat array for the length of password selected by the user
     let randomize = [];
     for (let i =0; i < userNumber; i++) {
