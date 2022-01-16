@@ -2,13 +2,13 @@
 
 // i will create arrays to contain each charType and declare a var for them out of the function --- arrays no longer needed here
 
-// var decalred
+// array declared
 let selection = [];
 
 // start generatePassword function
 function generatePassword() {
 
-   // i will prompt the user to select a password length and i will create var for the password length
+// i will prompt the user to select a password length and i will create var for the password length
    let userNumber;
    
    do {
@@ -64,8 +64,7 @@ function ask () {
       alert("Your password will not contain special characaters");
       }
 
-
-// i will concat the arrays based on user choice and use if/else to select the correct array -- if/else was ommited with the array.push method
+// i will concat the arrays based on user choice and use if/else to select the correct array -- concat and if/else were ommited with the array.push method
 // if all no
     if (!yesLower && !yesUpper && !yesNumber && !yesSpecial) {
       prompt = alert("You must choose at least one character style!");
@@ -78,7 +77,9 @@ function ask () {
     for (let i =0; i < userNumber; i++) {
       randomize += selection[Math.floor(Math.random() * selection.length)]
     }
+    selection = [];
     return randomize;
+    
 };
 
 // Get references to the #generate element
