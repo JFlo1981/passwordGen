@@ -115,13 +115,18 @@ function generatePassword() {
 
   } else if (yesNumber) {
       selection = numbers;
-      
+
   } else if (yesSpecial) {
       selection = spChar;
   }
-};
-// i will pull random selections from the user selected concat array for the length of password selected by the user
 
+// i will pull random selections from the user selected concat array for the length of password selected by the user
+    let randomize = [];
+    for (let i =0; i < number; i++) {
+      randomize += selection[Math.floor(Math.random() * selection.length)]
+    }
+    return randomize;
+};
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -132,7 +137,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
