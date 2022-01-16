@@ -72,11 +72,12 @@ function ask () {
     }
 };
 
-// i will pull random selections from the user selected concat. array for the length of password selected by the user
+// i will pull random selections from the user selected array for the length of password selected by the user
     let randomize = [];
     for (let i =0; i < userNumber; i++) {
       randomize += selection[Math.floor(Math.random() * selection.length)]
     }
+// selection array declared empty before next generateBtn click
     selection = [];
     return randomize;
     
