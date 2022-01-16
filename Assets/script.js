@@ -20,7 +20,6 @@ function generatePassword() {
    alert("Your password will be " + userNumber + " characters long.");
        }
 
-
 // i will prompt the user to select character types
 // and create vars for character arrays --- character arrays no longer used
 // added function to return to prompt if no character values are chosen
@@ -80,7 +79,6 @@ function ask () {
 // selection array declared empty before next generateBtn click
     selection = [];
     return randomize;
-    
 };
 
 // Get references to the #generate element
@@ -92,10 +90,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 };
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// find method to clear previous selections from <selection array>
