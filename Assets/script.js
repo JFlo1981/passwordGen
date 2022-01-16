@@ -19,7 +19,7 @@ var selection;
 // start generatePassword function
 function generatePassword() {
 
-// i will prompt the user to select a password length
+// i will prompt the user to select a password length and i will create var for the password length
     let number = 0
     while (number < 8 || number >128) {
       number = prompt("Choose a passowrd length: (8-128 characters");
@@ -28,6 +28,7 @@ function generatePassword() {
 
 
 // i will prompt the user to select character types
+//  and create vars for character arrays
 
     const yesUpper = confirm("Do you want UPPERCASE characters?");
     if (yesUpper) {
@@ -60,9 +61,65 @@ function generatePassword() {
     if (!yesSpecial) {
       alert("Your password will not contain special characaters");
       }
-};
-// i will create variables for the password length and character arrays
+
+
 // i will concat the arrays based on user choice and use if/else to select the correct array
+// if all no
+    if (!yesLower && !yesUpper && !yesNumber && !yesSpecial) {
+      prompt = alert("You must choose at least one character style!");
+    }
+// if all yes
+    if (yesLower && yesUpper && yesNumber && yesSpecial) {
+      selection = spChar.concat(numbers, upperCase, lowerCase);
+    }
+// else if for 3 selections
+    else if (yesLower && yesUpper && yesNumber) {
+    selection = lowerCase.concat(numbers, upperCase);
+
+  } else if (yesLower && yesUpper && yesSpecial) {
+    selection = lowerCase.concat(spChar, upperCase);
+
+  } else if (yesLower && yesSpecial && yesNumber) {
+    selection = lowerCase.concat(numbers, spChar);
+
+  } else if (yesSpecial && yesUpper && yesNumber) {
+    selection = spChar.concat(numbers, upperCase);
+  }
+
+  // else if for 2 selection
+   else if (yesSpecial && yesNumber) {
+     selection = spChar.concat(numbers);
+
+  } else if (yesSpecial && yesLower) {
+     selection = spChar.concat(lowerCase);
+
+  } else if (yesSpecial && yesUpper) {
+     selection = spChar.concat(upperCase);
+
+  } else if (yesLower && yesNumber) {
+     selection = lowerCase.concat(numbers);
+
+  } else if (yesLower && yesUpper) {
+     selection = lowerCase.concat(upperCase);
+
+  } else if (yesNumber && yesUpper) {
+     selection = numbers.concat(upperCase);
+  } 
+
+  // else if for one selection
+    else if (yesLower) {
+      selection = lowerCase;
+
+  } else if (yesUpper) {
+      selection = upperCase;
+
+  } else if (yesNumber) {
+      selection = numbers;
+      
+  } else if (yesSpecial) {
+      selection = spChar;
+  }
+};
 // i will pull random selections from the user selected concat array for the length of password selected by the user
 
 // Get references to the #generate element
