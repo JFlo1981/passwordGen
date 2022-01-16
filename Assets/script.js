@@ -25,10 +25,42 @@ function generatePassword() {
       number = prompt("Choose a passowrd length: (8-128 characters");
       alert("Your password will be " + number + " characters long.");
     }
-};
+
 
 // i will prompt the user to select character types
 
+    const yesUpper = confirm("Do you want UPPERCASE characters?");
+    if (yesUpper) {
+      alert("Your password will contain UPPERCASE characaters");
+    }
+    if (!yesUpper) {
+      alert("Your password will not contain UPPERCASE characaters");
+      }
+
+    const yesLower = confirm("Do you want lowercase characters?");
+    if (yesLower) {
+      alert("Your password will contain lowercase characaters");
+    }
+    if (!yesLower) {
+      alert("Your password will not contain lowercase characaters");
+      }
+
+    const yesNumber = confirm("Do you want numeric characters?");
+    if (yesNumber) {
+      alert("Your password will contain numeric characaters");
+    }
+    if (!yesNumber) {
+      alert("Your password will not contain numeric characaters");
+      }
+
+    const yesSpecial = confirm("Do you want special characters (@, %, & etc)?");
+    if (yesSpecial) {
+      alert("Your password will contain special characaters");
+    }
+    if (!yesSpecial) {
+      alert("Your password will not contain special characaters");
+      }
+};
 // i will create variables for the password length and character arrays
 // i will concat the arrays based on user choice and use if/else to select the correct array
 // i will pull random selections from the user selected concat array for the length of password selected by the user
