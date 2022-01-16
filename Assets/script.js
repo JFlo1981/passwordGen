@@ -20,10 +20,15 @@ var selection;
 function generatePassword() {
 
 // i will prompt the user to select a password length and i will create var for the password length
-    let number = 0
-    while (number < 8 || number >128) {
-      number = prompt("Choose a passowrd length: (8-128 characters");
-      alert("Your password will be " + number + " characters long.");
+var userNumber;
+
+do {
+    userNumber = prompt("Choose a password length: (8-128 character)");
+    userNumber = Number(userNumber);
+}
+while (userNumber < 8 || userNumber > 128 || isNaN(userNumber)) {
+
+alert("Your password will be " + userNumber + " characters long.");
     }
 
 
@@ -122,7 +127,7 @@ function generatePassword() {
 
 // i will pull random selections from the user selected concat array for the length of password selected by the user
     let randomize = [];
-    for (let i =0; i < number; i++) {
+    for (let i =0; i < userNumber; i++) {
       randomize += selection[Math.floor(Math.random() * selection.length)]
     }
     return randomize;
