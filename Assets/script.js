@@ -28,40 +28,40 @@ function generatePassword() {
 
 ask(); 
 function ask () {
-    const yesUpper = confirm("Do you want UPPERCASE characters?");
+    const yesUpper = confirm("Do you want uppercase characters?");
     if (yesUpper) {
-      alert("Your password will contain UPPERCASE characaters");
+      alert("Your password will contain uppercase characaters.");
       selection.push('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
     }
     if (!yesUpper) {
-      alert("Your password will not contain UPPERCASE characaters");
+      alert("Your password will NOT contain uppercase characaters.");
       }
 
     const yesLower = confirm("Do you want lowercase characters?");
     if (yesLower) {
-      alert("Your password will contain lowercase characaters");
+      alert("Your password will contain lowercase characaters.");
       selection.push('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
     }
     if (!yesLower) {
-      alert("Your password will not contain lowercase characaters");
+      alert("Your password will NOT contain lowercase characaters.");
       }
 
     const yesNumber = confirm("Do you want numeric characters?");
     if (yesNumber) {
-      alert("Your password will contain numeric characaters");
+      alert("Your password will contain numeric characaters.");
       selection.push('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
      }
     if (!yesNumber) {
-      alert("Your password will not contain numeric characaters");
+      alert("Your password will NOT contain numeric characaters.");
       }
 
     const yesSpecial = confirm("Do you want special characters (@, %, & etc)?");
     if (yesSpecial) {
-      alert("Your password will contain special characaters");
+      alert("Your password will contain special characaters.");
       selection.push('#', '$', '^', ')', '@', '%', '+', '/', "'", '?', ':', ',', '!', '(', '}', '{', ']', '[', '~', '-', '_', '.') ;
     }
     if (!yesSpecial) {
-      alert("Your password will not contain special characaters");
+      alert("Your password will NOT contain special characaters.");
       }
 
 // i will concat the arrays based on user choice and use if/else to select the correct array -- concat and if/else were ommited with the array.push method
