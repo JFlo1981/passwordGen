@@ -16,8 +16,17 @@ const spChar = ['#', '$', '^', ')', '@', '%', '+', '/', "'", '?', ':', ',', '!',
 // var decalred
 var selection;
 
+// start generatePassword function
+function generatePassword() {
 
 // i will prompt the user to select a password length
+    let number = 0
+    while (number < 8 || number >128) {
+      number = prompt("Choose a passowrd length: (8-128 characters");
+      alert("Your password will be " + number + " characters long.");
+    }
+};
+
 // i will prompt the user to select character types
 
 // i will create variables for the password length and character arrays
